@@ -17,7 +17,7 @@ class TaskUpdate(BaseModel):
 
 # -------- RESPONSE --------
 class TaskResponse(BaseModel):
-    id: int
+    id: int 
     task_name: str
     description: Optional[str]
     is_completed: bool

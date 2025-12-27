@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.db.database import engine
 from app.db.base import Base
 from app.api.v1.tasks import router as tasks_router
+from app.api.v1.auth import router as auth_router
 
 app = FastAPI(title="Todo API")
 
@@ -14,4 +15,5 @@ def root():
 Base.metadata.create_all(bind=engine)
 
 # register routers
+app.include_router(auth_router)
 app.include_router(tasks_router)
